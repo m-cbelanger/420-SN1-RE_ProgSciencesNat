@@ -11,7 +11,13 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v2
+
+    - name: Debugging Info
+      run: |
+        ls -al
+        ls -al Cours_1
+        cat Cours_1/cours_1.ipynb
 
     - name: Update NBViewer Links
       uses: KensingtonOscupant/nbviewer-flush-cache-action@v1.0.4
