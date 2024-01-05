@@ -10,9 +10,6 @@ jobs:
     runs-on: ubuntu-latest  # You can choose the appropriate runner
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-
     - name: Update NBViewer Links
       uses: KensingtonOscupant/nbviewer-flush-cache-action@v1.0.4
       with:
