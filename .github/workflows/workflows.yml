@@ -4,8 +4,7 @@ on:
   push:
     branches:
       - master  # You can specify the branch you want to trigger this workflow on
-  permissions:
-    contents: write
+
 jobs:
   update_links:
     runs-on: ubuntu-latest  # You can choose the appropriate runner
