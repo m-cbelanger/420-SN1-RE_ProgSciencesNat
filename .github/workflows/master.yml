@@ -18,6 +18,5 @@ jobs:
     - name: Update NBViewer Links
       uses: KensingtonOscupant/nbviewer-flush-cache-action@v1.0.4
       with:
-        repository: '420-SN1-RE_ProgSciencesNat/Cours_1'
-        file_path: 'cours_1.ipynb'  # IMPORTANT! path to the file where you would like to have the links changed, for the readme it would be 'README.md'
+        file_path: '420-SN1-RE_ProgSciencesNat/Cours_1cours_1.ipynb'  # IMPORTANT! path to the file where you would like to have the links changed, for the readme it would be 'README.md'
 
