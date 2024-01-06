@@ -3,20 +3,30 @@ name: Update NBViewer Links Workflow
 on:
   push:
     branches:
-      - master  # You can specify the branch you want to trigger this workflow on
+      - master  # Vous pouvez spécifier la branche sur laquelle vous souhaitez déclencher ce workflow
+
 permissions:
   contents: write
+
 jobs:
   update_links:
-    runs-on: ubuntu-latest  # You can choose the appropriate runner
+    runs-on: ubuntu-latest  # Vous pouvez choisir le runner approprié
 
     steps:
-    - name: Checkout code
+    - name: Checkout du code
       uses: actions/checkout@v3
 
+    - name: Exécuter le script de mise à jour des liens NBViewer
+      run: |
+        latest_commit="$(git rev-parse master)"
+        sed -i "s|https://nbviewer.org/github/\([^/]\+\)/\([^/]\+\)/blob/\([^/]\+\)/\([^'' '']\+\)|https://nbviewer.org/github/\1/\2/blob/${latest_commit}/\4|g" "${{ env.FILE_PATH }}"
+        git add "${{ env.FILE_PATH }}"
+        git commit -m "Mise à jour des liens NBViewer vers le dernier commit"
+        git push
+      env:
+        FILE_PATH: 'master/420-SN1-RE_ProgSciencesNat/Cours_1cours_1.ipynb'
 
-    - name: Update NBViewer Links
+    - name: Mettre à jour les liens NBViewer
       uses: KensingtonOscupant/nbviewer-flush-cache-action@v1.0.4
       with:
-        file_path: 'master/420-SN1-RE_ProgSciencesNat/Cours_1cours_1.ipynb'  # IMPORTANT! path to the file where you would like to have the links changed, for the readme it would be 'README.md'
-
+        file_path: 'master/420-SN1-RE_ProgSciencesNat/Cours_1cours_1.ipynb'  # Chemin du fichier où vous souhaitez effectuer les modifications des liens, pour le readme, ce serait 'README.md'
