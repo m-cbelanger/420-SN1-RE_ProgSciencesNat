@@ -3,7 +3,7 @@ name: Update NBViewer Links Workflow
 on:
   push:
     branches:
-      - dev  # Vous pouvez spécifier la branche sur laquelle vous souhaitez déclencher ce workflow
+      - develop  # Vous pouvez spécifier la branche sur laquelle vous souhaitez déclencher ce workflow
 
 permissions:
   contents: write
