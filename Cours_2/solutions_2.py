@@ -28,6 +28,7 @@ def arc_cercle(rayon, angle):
     return angle/360 *2*math.pi*rayon
 print("Q1d) : L'arc engendré par un rayon de 4 et un angle de 130 est de :", round(arc_cercle(4, 130),2))
 
+#Question 1e)
 def max_5(n1, n2, n3, n4, n5):
     return max(n1, n2, n3, n4, n5)
 n1= 4
@@ -37,8 +38,12 @@ n4=-100
 n5=9.5
 print("Q1e) : le max entre les nombres", n1, ',',n2, ',',n3, ',', n4, ',',n5, "est: ", max_5(n1, n2, n3, n4, n5))
 
-print()
-print()
+#Question 1f)
+def hauteur(heure):
+    h = 5.9*math.sin(math.pi * heure /6 -1.97) +6.9
+    return h
+temps_journee = 6
+print("Q1f) La hauteur de la marrée pour", temps_journee,"heure est",hauteur(temps_journee), "mètres")
 
 #Question 2
 #a)
@@ -91,7 +96,7 @@ def quadratique(a,b,c):
     
     return (zero_1, zero_2)
             
-print("pour -1,8,4:", quadratique(-1,8,4))
+print("Q2c) pour -1,8,4:", quadratique(-1,8,4))
 
 
 #Q2d) i)
@@ -169,7 +174,7 @@ force(15, 4)
 force(F=15, a=4)
 force(F=5)
 
-
+'''
 # Question 3 Trouvez l'erreur
 #a)
 def ma_description(mot):
@@ -202,4 +207,4 @@ def mon_calcul(a,b):
 
 print(mon_calcul(1,5))
     
-    
+''' 
