@@ -83,6 +83,49 @@ def salaire(montant_annuel, niveau_protection):
 print(salaire(101000, 'A'))
 
 #d)
+compteur = 0
+def ticket():
+    global compteur
+    compteur +=2  #c'est un raccourcis pour faire compteur = compteur + 2
+#Aucun return
+
+#e)
+plus_haut = 1.5
+
+def mise_a_jour_hauteur(hauteur):
+    global plus_haut
+    if (hauteur > plus_haut):
+        plus_haut = hauteur
+#Aucun else 
+
+#f)
+lapins_totaux = 2
+prix_nourriture = 4.6
+
+def lapin_repro():
+    global lapins_totaux
+    lapins_totaux = lapins_totaux * 2
+
+def lapin_vente(nombre_lapins):
+    global lapins_totaux
+    lapins_totaux = lapins_totaux-nombre_lapins
+
+def lapin_nourriture():
+    prix_total = lapins_totaux * prix_nourriture
+    print("La nourriture des lapins présentement coûte", prix_total, "dollars")
+
+print(lapins_totaux)
+lapin_repro()
+lapin_repro()
+lapin_vente(1)
+lapin_nourriture()
+print(lapins_totaux)
+lapin_nourriture()
+lapin_repro()
+lapin_vente(6)
+print(lapins_totaux)
+        
+#g)        
 limite = 10
 def est_croissant(heure):
     h1 = hauteur(heure)
